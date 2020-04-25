@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Applicability",
+    "options": [
+      {
+        "name": "No",
+        "score": 0
+      },
+      {
+        "name": "Yes",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "name": "Implementation Level",
+    "options": [
+      {
+        "name": "Not Implemented",
+        "score": 0
+      },
+      {
+        "name": "Partially Implemented",
+        "score": 0.5
+      },
+      {
+        "name": "Fully Implemented",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "name": "Maturity of Control",
+    "options": [
+      {
+        "name": "Undeveloped",
+        "score": 0.2
+      },
+      {
+        "name": "Informal",
+        "score": 0.4
+      },
+      {
+        "name": "Established",
+        "score": 0.6
+      },
+      {
+        "name": "Integrated",
+        "score": 0.8
+      },
+      {
+        "name": "Optimised",
+        "score": 1
+      }
+    ]
+  }
+]

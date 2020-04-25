@@ -1,0 +1,74 @@
+[
+  {
+    "questionIndex": "5.1.1",
+    "answerScores": {
+      "Applicability": 1,
+      "Implementation Level": 0.5,
+      "Maturity of Control": 0.4
+    }
+  },
+  {
+    "questionIndex": "5.1.2",
+    "answerScores": {
+      "Applicability": 0,
+      "Implementation Level": 0.5,
+      "Maturity of Control": 0.2
+    }
+  },
+  {
+    "questionIndex": "6.1.1",
+    "answerScores": {
+      "Applicability": 0,
+      "Implementation Level": 1,
+      "Maturity of Control": 1
+    }
+  },
+  {
+    "questionIndex": "6.1.2",
+    "answerScores": {
+      "Applicability": 0,
+      "Implementation Level": 1,
+      "Maturity of Control": 1
+    }
+  },
+  {
+    "questionIndex": "6.1.3",
+    "answerScores": {
+      "Applicability": 1,
+      "Implementation Level": 0,
+      "Maturity of Control": 1
+    }
+  },
+  {
+    "questionIndex": "6.1.4",
+    "answerScores": {
+      "Applicability": 0,
+      "Implementation Level": 0.5,
+      "Maturity of Control": 0.4
+    }
+  },
+  {
+    "questionIndex": "6.1.5",
+    "answerScores": {
+      "Applicability": 0,
+      "Implementation Level": 0.5,
+      "Maturity of Control": 1
+    }
+  },
+  {
+    "questionIndex": "6.2.1",
+    "answerScores": {
+      "Applicability": 0,
+      "Implementation Level": 0.5,
+      "Maturity of Control": 1
+    }
+  },
+  {
+    "questionIndex": "6.2.2",
+    "answerScores": {
+      "Applicability": 0,
+      "Implementation Level": 1,
+      "Maturity of Control": 1
+    }
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "index": "5",
+    "name": "Security Policies",
+    "children": [
+      {
+        "index": "5.1",
+        "name": "Management direction for information security",
+        "children": [
+          {
+            "index": "5.1.1",
+            "name": "Policies for information"
+          },
+          {
+            "index": "5.1.2",
+            "name": "Review of the policies for information security "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": "6",
+    "name": "Organisation of information security",
+    "clause": true,
+    "children": [
+      {
+        "index": "6.1",
+        "name": "Internal organisation",
+        "children": [
+          {
+            "index": "6.1.1",
+            "name": "Information security roles and responsibilities"
+          },
+          {
+            "index": "6.1.2",
+            "name": "Segregation of duties"
+          },{
+            "index": "6.1.3",
+            "name": "Contact with authorities"
+          },
+          {
+            "index": "6.1.4",
+            "name": "Contact with special interest groups"
+          },{
+            "index": "6.1.5",
+            "name": "Information security in project management"
+          }
+        ]
+      },
+      {
+        "index": "6.2",
+        "name": "Mobile devices and teleworking",
+        "children": [
+          {
+            "index": "6.2.1",
+            "name": "Mobile device policy"
+          },
+          {
+            "index": "6.2.2",
+            "name": "Teleworking"
+          }
+        ]
+      }
+    ]
+  }
+]
