@@ -16,6 +16,7 @@ class Dashboard extends React.Component {
     createTableRows(questions, selects, answers) {
         let rows = [];
 
+
         let questionsArray = this.initRowsByQuestion(questions);
         questionsArray.map(questionItem => {
             let clause = questionItem.shift();
@@ -43,8 +44,32 @@ class Dashboard extends React.Component {
                     }
                 })
             });
-
+            row.push(...Array(10-row.length).fill(null))
         });
+
+        let sectionIndex = 0;
+        let sectionGroup = [];
+        let clauseGroup = [];
+        rows.map((row, index) => {
+            if (row[1] && row[6]=== null) {
+                if (sectionGroup.length){
+                    rows[sectionIndex][6] = this.calAverage(sectionGroup);
+                    clauseGroup.push(rows[sectionIndex][6])
+                }
+                sectionIndex = index;
+                sectionGroup = [];
+
+            } else if (row[6]!== null) {
+                sectionGroup.push(row[6])
+            } else {
+                rows[sectionIndex][6] = this.calAverage(sectionGroup);
+                clauseGroup.push(rows[sectionIndex][6])
+                row[6] = this.calAverage(clauseGroup);
+                sectionIndex = index + 1;
+                sectionGroup = [];
+                clauseGroup = []
+            }
+        })
 
         console.log(rows);
         return rows;
@@ -61,6 +86,10 @@ class Dashboard extends React.Component {
         })
     }
 
+    calAverage(arr) {
+        const total = arr.reduce((a, b) => a + b, 0);
+        return arr.length === 0 ? 0 : total / arr.length;
+    }
 
     render() {
         const rows = this.createTableRows(questions, selects, this.props.location.state.allQuestionAnswers)
