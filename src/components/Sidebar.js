@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 
 import questions from "../data/questions"
 
+import '../style/sidebar.scss';
 
 class Sidebar extends React.Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class Sidebar extends React.Component {
                                               primary={question.index + "       " + question.name}/>
                                 {this.state.openStatus[question.index] ? <ExpandLess/> : <ExpandMore/>}
                             </ListItem>
-                            <Collapse in={this.state.openStatus[question.index]} timeout="auto" unmountOnExit>
+                            <Collapse in={this.state.openStatus[question.index]} timeout="auto" unmountOnExit style={{paddingLeft: '16px'}}>
                                 <List component="div" disablePadding>
                                     {createNestList(question.children)}
                                 </List>
@@ -48,7 +49,7 @@ class Sidebar extends React.Component {
                     )
                 }
                 return (
-                    <ListItem button key={question.index} onClick={() => this.props.updateQuestion(question.index, question.name)}>
+                    <ListItem button key={question.index} onClick={() => this.props.updateQuestion(question.index, question.name)} >
                         <ListItemText key={question.index} primary={question.index}/>
                     </ListItem>
                 )
@@ -56,14 +57,15 @@ class Sidebar extends React.Component {
         }
 
         return (
-            <div>
+            <div id="side-bar-id">
                 <List component="nav"
                       aria-labelledby="nested-list-subheader"
                       subheader={
                           <ListSubheader component="div" id="nested-list-subheader">
-                              Nested List Items
+                              Security Questions
                           </ListSubheader>
                       }
+                      className="list-item"
                 >
                     {createNestList(questions)}
                 </List>

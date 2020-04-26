@@ -6,6 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 
 import selects from "../data/selects";
+import '../style/qaform.scss';
 
 class QAForm extends React.Component {
 
@@ -27,10 +28,10 @@ class QAForm extends React.Component {
         const createSelects = (selects) => {
             return selects.map((select) => {
                 return (
-                    <Grid item key={1} xs={3}>
+                    <Grid item key={1} xs={4}>
                         <FormControlLabel
                             control={
-                                <Select key={this.state.answers[select.name]} value={this.state.answers[select.name]}
+                                <Select className="select-class" key={this.state.answers[select.name]} value={this.state.answers[select.name]}
                                         onChange={(e) => this.updateAnswer(select.name, e)}>
                                     {select.options.map((option) => {
                                         return <MenuItem key={option.name}
@@ -40,6 +41,7 @@ class QAForm extends React.Component {
                             }
                             labelPlacement="top"
                             label={select.name}
+                            className="select-label-class"
                         />
                     </Grid>
                 )
@@ -47,12 +49,15 @@ class QAForm extends React.Component {
         }
 
         return (
-            <Grid container spacing={3}>
-                <Grid item xs={12}>
-                    <h1>{this.props.questionText} </h1>
+            <div id="qa-form-id">
+                <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                        <h1>{this.props.questionText} </h1>
+                    </Grid>
+                    {createSelects(selects)}
                 </Grid>
-                {createSelects(selects)}
-            </Grid>
+            </div>
+
         )
     }
 }

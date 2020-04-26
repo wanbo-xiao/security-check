@@ -22,3 +22,4 @@ Based on some Q&amp;A to generate a dashboard
 ## Skill set 
 1. React
 1. Material-UI
+1. Apexcharts
