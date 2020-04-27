@@ -37,7 +37,7 @@ class Sidebar extends React.Component {
                         <div key={question.index}>
                             <ListItem button onClick={() => this.toggle(question.index)}>
                                 <ListItemText key={question.index}
-                                              primary={question.index + "       " + question.name}/>
+                                              primary={question.index + " " + question.name}/>
                                 {this.state.openStatus[question.index] ? <ExpandLess/> : <ExpandMore/>}
                             </ListItem>
                             <Collapse in={this.state.openStatus[question.index]} timeout="auto" unmountOnExit style={{paddingLeft: '16px'}}>
@@ -50,7 +50,7 @@ class Sidebar extends React.Component {
                 }
                 return (
                     <ListItem button key={question.index} onClick={() => this.props.updateQuestion(question.index, question.name)} >
-                        <ListItemText key={question.index} primary={question.index}/>
+                        <ListItemText key={question.index} primary={question.index + " " + question.name}/>
                     </ListItem>
                 )
             });

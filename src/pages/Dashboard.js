@@ -8,14 +8,16 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-import ReactApexCharts from 'react-apexcharts'
-
+import RadarChart from "../components/RadarChart";
 import questions from "../data/questions"
 import selects from "../data/selects";
 import '../style/dashboard.scss';
+import Grid from "@material-ui/core/Grid";
 
 
 class Dashboard extends React.Component {
+
+
     createTableRows(questions, selects, answers) {
         let rows = [];
 
@@ -89,34 +91,19 @@ class Dashboard extends React.Component {
 
     calAverage(arr) {
         const total = arr.reduce((a, b) => a + b, 0);
-        return arr.length === 0 ? 0 : total / arr.length;
+        return arr.length === 0 ? 0 : parseFloat(parseFloat(total / arr.length).toFixed(2));
     }
 
     render() {
-        const chart = {
-            series: [{
-                name: 'Series 1',
-                data: [80, 50, 30, 40, 100, 20],
-            }],
-            options: {
-                chart: {
-                    height: 350,
-                    type: 'radar',
-                },
-                title: {
-                    text: 'Basic Radar Chart'
-                },
-                xaxis: {
-                    categories: ['January', 'February', 'March', 'April', 'May', 'June']
-                }
-            },
-        };
+        const rows = this.createTableRows(questions, selects, this.props.location.state.allQuestionAnswers);
+        const rowsSummary = rows.filter(row => row[0])
 
-        const rows = this.createTableRows(questions, selects, this.props.location.state.allQuestionAnswers)
         return (
 
             <div id="dashboard-id">
-                <TableContainer component={Paper}>
+                <RadarChart rows={rowsSummary}></RadarChart>
+                <h1>Raw table data</h1>
+                <TableContainer component={Paper} id="raw-table-data-id">
                     <Table size="small">
                         <TableHead>
                             <TableRow>
@@ -134,7 +121,7 @@ class Dashboard extends React.Component {
                         </TableHead>
                         <TableBody>
                             {rows.map((row) => (
-                                <TableRow key={row[0] + row[1]}>
+                                <TableRow key={row[0] + row[1]} class={row[0] ? "clause-row" : (row[3] ? "question-row" : "section-row")}>
                                     {
                                         row.map((item, index) => (
                                             <TableCell key={index}> {item}</TableCell>
@@ -146,42 +133,11 @@ class Dashboard extends React.Component {
                     </Table>
                 </TableContainer>
 
-                <TableContainer component={Paper}>
-                    <Table size="small">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Graph Data</TableCell>
-                                <TableCell>Rating</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {
-                                rows.map((row, index) => {
-                                    if (row[0]) {
-                                        return (
-                                            <TableRow key={index}>
-                                                <TableCell> {row[0]}</TableCell>
-                                                <TableCell> {row[6]}</TableCell>
-                                            </TableRow>
-                                        )
-                                    }
-                                })
-                            }
 
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-
-                <div className="row">
-                    <div className="mixed-chart">
-                        <ReactApexCharts
-                            options={chart.options} series={chart.series} type="radar" height={350}
-                        />
-                    </div>
-                </div>
             </div>
 
-        );
+        )
+            ;
     }
 }
 

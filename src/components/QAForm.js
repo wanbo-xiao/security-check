@@ -28,7 +28,7 @@ class QAForm extends React.Component {
         const createSelects = (selects) => {
             return selects.map((select) => {
                 return (
-                    <Grid item key={1} xs={4}>
+                    <Grid item key={select.name} xs={4}>
                         <FormControlLabel
                             control={
                                 <Select className="select-class" key={this.state.answers[select.name]} value={this.state.answers[select.name]}
@@ -50,7 +50,7 @@ class QAForm extends React.Component {
 
         return (
             <div id="qa-form-id">
-                <Grid container spacing={3}>
+                <Grid container key={1} spacing={3}>
                     <Grid item xs={12}>
                         <h1>{this.props.questionText} </h1>
                     </Grid>

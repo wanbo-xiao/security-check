@@ -1,6 +1,9 @@
 # Security-check
 Based on some Q&amp;A to generate a dashboard
 
+## Demo
+http://www.bobsyd.com/demo/security-check/
+
 ## Requirement 
 1. A dashboard page using React.js to display Q&amp;As, a summary and a chart
 2. A form page to enter those Q&amp;As
@@ -22,4 +25,4 @@ Based on some Q&amp;A to generate a dashboard
 ## Skill set 
 1. React
 1. Material-UI
-1. Apexcharts
+1. Apexcharts  https://apexcharts.com/

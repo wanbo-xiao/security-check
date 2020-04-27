@@ -54,8 +54,8 @@ class SubmitPage extends React.Component {
                     <Grid item xs={3}>
                         <Sidebar updateQuestion={this.updateQuestion.bind(this)} onSubmit={this.onSubmit.bind(this)}/>
                     </Grid>
-                    {this.state.questionIndex &&
                     <Grid item xs={9}>
+                        {this.state.questionIndex &&
                         <QAForm
                             key={this.state.questionIndex}
                             questionText={this.state.questionText}
@@ -63,8 +63,9 @@ class SubmitPage extends React.Component {
                             answers={this.state.currentQuestionAnswers.answerScores}
                             updateAnswers={this.updateAnswers.bind(this)}
                         />
+                        }
+                        {!this.state.questionIndex && <h3>Please select the questions from right (All answers have been prefill for a quick demo)</h3>}
                     </Grid>
-                    }
                 </Grid>
             </div>
         );

@@ -1,8 +1,29 @@
 #dashboard-id {
   margin:32px;
 
-  .MuiTableCell-sizeSmall{
-    padding:5px;
-    text-align: center;
+  #raw-table-data-id{
+    .MuiTableCell-sizeSmall{
+      padding:5px;
+    }
+    th {
+      background-color: #adb9ca;
+      color: white;
+    }
+
+    tr {
+      &.clause-row {
+         td:not(:first-child) {
+           background-color: black;
+           color: white;
+         }
+       }
+      &.section-row {
+        td:not(:first-child) {
+          background-color: #d6dce4;
+        }
+      }
+    }
   }
+
+
 }
